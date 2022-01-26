@@ -12,7 +12,7 @@ export const ScreenProblema2 = () => {
           color: 'black',
           fontWeight: 'bold' 
           }}>
-      PISTAS:  necesitas utlizar el metodo post para obtener una respuesta<br />
+      PISTAS:  necesitas utlizar el metodo GET para obtener una respuesta<br />
                puede utilizar postman para hacer prueba. 
 
                manda la llave ( key ) de "type"  "usuarios"
