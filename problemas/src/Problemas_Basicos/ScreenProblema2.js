@@ -14,6 +14,8 @@ export const ScreenProblema2 = () => {
           }}>
       PISTAS:  necesitas utlizar el metodo post para obtener una respuesta<br />
                puede utilizar postman para hacer prueba. 
+
+               manda la llave ( key ) de "type"  "usuarios"
       </span>
       </div>;
 };
