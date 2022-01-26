@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ScreenProblema1 } from './Problemas_Basicos/ScreenProblema1';
+//import { ScreenProblema1 } from './Problemas_Basicos/ScreenProblema1';
+import { ScreenProblema2 } from './Problemas_Basicos/ScreenProblema2';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ScreenProblema1 />
+    <ScreenProblema2 />
   </React.StrictMode>,
   document.getElementById('root')
 );
