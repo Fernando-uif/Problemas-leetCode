@@ -1,29 +1,61 @@
+  class ListNode {
+      val: number
+      next: ListNode | null
+      constructor(val?: number, next?: ListNode | null) {
+          this.val = (val===undefined ? 0 : val)
+          this.next = (next===undefined ? null : next)
+      }
+  }
 
-// // Input: l1 = [2,4,3], l2 = [5,6,4]
-// // Output: [7,0,8]
-// // Explanation: 342 + 465 = 807.
+const addTwoNumber = (l1:number[] | null, l2: number[] | null):number[]| null => {
+    let l1Reverse = (l1) ? l1.reverse():[];
+    let l2Reverse = (l2) ? l2.reverse():[];
+  
 
-// function addTwoNumbers(l1: number[] | null, l2: number[] | null):number[] | null {
+    let respUniendo1 = l1Reverse.join('');
+    let respUniendo2 = l2Reverse.join('');
 
-//     let arr = [];
-    
-//     let algo = l1 ? l1.reverse() : '';
-//     let algo2 = l2 ? l2.reverse() : '';
-//     let resp = algo.isArray([]) ? algo.join('') : '';
-//     let resp2 = algo2.join('');
-//     let ans = +resp + +resp2;
-//     let ans2 = ans + '';
-//     let algomas = ans2.split('');
-    
-//     let arrAlreves = algomas.reverse();
-//     console.log(arrAlreves);
-    
-    
-    
-//     // TODO hacer la suma y colocarlo en un arr
-//     // TODO que pasa si es vacio
-    
-//     return null;
-// };
+    let ansSum = +respUniendo1 + +respUniendo2;
 
-// addTwoNumbers([2,4,3],[5,6,4]);
+    let ansString = ansSum + '';
+    let respTotalArr = ansString.split('');
+
+    let respNum = respTotalArr.map((value) => +value);
+    
+    let algo = respNum.reverse()
+    return algo;
+}
+// console.log(addTwoNumber([1,4,0], [1,3,5]));
+
+const reverso = (l1:number[] | null, l2: number[] | null):number[] | null => {
+    let algomas = new ListNode()
+     l1 = l1 ? l1 : [];
+     l2 = l2 ? l2 : [];
+
+    let arr1:number[] = [];
+    let arr2:number[] = [];
+    let algo:number[] = [];
+    for(let i = l1.length - 1; i >= 0; i--  ) { 
+        arr1.push(l1[i]);
+    }
+    for(let i = l2.length - 1; i >= 0; i--  ) { 
+        arr2.push(l2[i]);
+    }
+    
+    let respUniendo1 = arr1.join('');
+    let respUniendo2 = arr2.join('');
+    
+    let ansSum = +respUniendo1 + +respUniendo2;
+    let ansString = ansSum + '';
+    let respTotalArr = ansString.split('');
+
+    let respNum = respTotalArr.map((value) => +value);
+    for(let i = respNum.length - 1; i >= 0; i--  ) { 
+        algo.push(respNum[i]);
+    }
+    console.log(typeof algo);
+    return algo;
+}
+
+
+
