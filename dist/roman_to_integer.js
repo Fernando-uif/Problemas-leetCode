@@ -1,26 +1,31 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 function romanToInt(s) {
-    const letters = [...s];
-    console.log(letters);
+    let word = s.match(/[^IVXLCDM]/g);
+    if (word)
+        return 0;
+    const romanNumber = [...s].map((element) => element.toUpperCase());
     let total = 0;
-    const romanNumbers = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000,
+    const romanNumbersValue = {
+        I: 1,
+        V: 5,
+        X: 10,
+        L: 50,
+        C: 100,
+        D: 500,
+        M: 1000,
     };
-    for (let i = 0; i <= letters.length - 1; i++) {
-        if (romanNumbers[letters[i]] <= romanNumbers[letters[i + 1]]) {
-            total += +(romanNumbers[letters[i]]);
+    for (let i = 0; i <= romanNumber.length; i++) {
+        if (romanNumbersValue[romanNumber[i]] < romanNumbersValue[romanNumber[i + 1]]) {
+            total +=
+                romanNumbersValue[romanNumber[i + 1]] -
+                    romanNumbersValue[romanNumber[i]];
+            i = i + 1;
         }
         else {
+            if (romanNumbersValue[romanNumber[i]])
+                total += romanNumbersValue[romanNumber[i]];
         }
     }
-    console.log(total);
-    return 2;
+    return total;
 }
-romanToInt("III");
+console.log(romanToInt("MCMLXXXV"));
